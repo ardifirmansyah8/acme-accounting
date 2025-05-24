@@ -14,8 +14,8 @@
     "migrate": "sequelize db:migrate",
     "migrate:create": "sequelize db:create",
     "postinstall": "node generate.js",
-    "db:migrate:test": "NODE_ENV=test sequelize db:migrate",
-    "db:create:test": "NODE_ENV=test sequelize db:create",
+    "db:migrate:test": "SET NODE_ENV=test & sequelize db:migrate",
+    "db:create:test": "SET NODE_ENV=test & sequelize db:create",
     "db:reset": "sequelize db:migrate:undo:all"
   },
   "dependencies": {
