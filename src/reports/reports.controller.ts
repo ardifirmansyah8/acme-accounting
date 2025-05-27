@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { Controller, Get, Post, HttpCode } from '@nestjs/common';
 import { ReportsService } from './reports.service';
 
@@ -18,9 +17,9 @@ export class ReportsController {
   @Post()
   @HttpCode(201)
   generate() {
-    void this.reportsService.accounts();
-    void this.reportsService.yearly();
-    void this.reportsService.fs();
+    this.reportsService.accounts();
+    this.reportsService.yearly();
+    this.reportsService.fs();
     return { message: 'finished' };
   }
 }

@@ -12,7 +12,6 @@ import { Company } from './Company';
 export enum UserRole {
   accountant = 'accountant',
   corporateSecretary = 'corporateSecretary',
-  director = 'director',
 }
 
 @Table({ tableName: 'users' })
