@@ -11,12 +11,13 @@
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "test": "jest",
     "debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "migrate": "sequelize db:migrate",
-    "migrate:create": "sequelize db:create",
     "postinstall": "node generate.js",
-    "db:migrate:test": "NODE_ENV=test sequelize db:migrate",
-    "db:create:test": "NODE_ENV=test sequelize db:create",
-    "db:reset": "sequelize db:migrate:undo:all"
+    "db:migrate": "sequelize db:migrate",
+    "db:migrate:create": "sequelize db:create",
+    "db:migrate:test": "SET NODE_ENV=test & sequelize db:migrate",
+    "db:create:test": "SET NODE_ENV=test & sequelize db:create",
+    "db:reset": "sequelize db:migrate:undo:all",
+    "db:seed": "ts-node scripts/seeder.ts"
   },
   "dependencies": {
     "@nestjs/common": "11.0.12",
@@ -52,7 +53,7 @@
     "supertest": "7.1.0",
     "ts-jest": "29.3.1",
     "ts-loader": "9.5.2",
-    "ts-node": "10.9.2",
+    "ts-node": "^10.9.2",
     "tsconfig-paths": "4.2.0",
     "typescript": "5.8.3",
     "typescript-eslint": "8.29.0"
